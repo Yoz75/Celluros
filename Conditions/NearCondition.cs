@@ -42,7 +42,7 @@ namespace Celluros.Conditions
         public override void Calculate(Field field)
         {
             Random random = new Random();
-            byte requiredTypeNeighboors = 0;
+            byte requiredTypeNeighbors = 0;
             for (uint x = 0; x < field.GetLength(0); x++)
             {
                 for (uint y = 0; y < field.GetLength(1); y++)
@@ -51,8 +51,8 @@ namespace Celluros.Conditions
                     {
                         if (field.IsTypeAtPosition(x, y, StartType))
                         {
-                            requiredTypeNeighboors = CountNeighbors(x, y, RequiredType);
-                            if (CellsCount.Contains(requiredTypeNeighboors))
+                            requiredTypeNeighbors = CountNeighbors(x, y, RequiredType);
+                            if (CellsCount.Contains(requiredTypeNeighbors))
                             {
                                 field.SetAtPosition(x, y, EndType);
                             }
