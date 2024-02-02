@@ -3,11 +3,7 @@ namespace Celluros
 {
     public class Field
     {
-        public Cell[,] Field_
-        {
-            get;
-            private set;
-        }
+        private Cell[,] Field_;
         public Field(uint xSize, uint ySize)
         { 
             Field_ = new Cell[xSize, ySize];
@@ -17,5 +13,22 @@ namespace Celluros
         {
             Field_[x,y] = instance;
         }
+
+        public bool IsTypeAtPosition(uint x, uint y, Cell type)
+        {
+            if(Field_[x,y] == type)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public uint GetLength(int dimension)
+        {
+            return (uint)Field_.GetLength(dimension);
+        }
+
+
     }
 }
