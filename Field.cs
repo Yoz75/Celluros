@@ -8,12 +8,12 @@ namespace Celluros
             get;
             private set;
         }
-        public Field(int xSize, int ySize)
+        public Field(uint xSize, uint ySize)
         { 
             Field_ = new Cell[xSize, ySize];
         }
 
-        public void SetAtPosition(int x, int y, Cell instance)
+        public void SetAtPosition(uint x, uint y, Cell instance)
         {
             Field_[x,y] = instance;
         }
