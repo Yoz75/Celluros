@@ -18,12 +18,31 @@ namespace Celluros
             {
                 newX = Field_.GetLength(0) - 1;
             }
+
+            if(y < 0) 
+            {
+                newY = Field_.GetLength(1) - 1;
+            }
+
             Field_[newX,newY] = instance;
         }
 
         public bool IsTypeAtPosition(int x, int y, Cell type)
         {
-            if(Field_[x,y] == type)
+            int newX, newY;
+            newX = x;
+            newY = y;
+            if(x < 0)
+            {
+                newX = Field_.GetLength(0) - 1;
+            }
+
+            if(y < 0)
+            {
+                newY = Field_.GetLength(1) - 1;
+            }
+
+            if(Field_[newX, newY] == type)
             {
                 return true;
             }

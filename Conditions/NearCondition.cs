@@ -64,21 +64,12 @@ namespace Celluros.Conditions
             byte CountNeighbors(uint x, uint y, Cell type)
             {
                 byte count = 0;
-                uint xLength = (uint)field.GetLength(0);
-                uint yLength = (uint)field.GetLength(1);
-                uint xCoord;
-                uint yCoord;
 
 
                 for(sbyte i = -1; i < 1; i++)
                 {
                     for (sbyte j = -1; j < 1; j++)
                     {
-                        if(i == -1 && j == -1)
-                        {
-                            _ = x == 0 ? xCoord = xLength - 2 : xCoord = x;
-                            _ = y == 0 ? yCoord = yLength - 2 : yCoord = y;
-                        }
                         if (i == 0 || j == 0)
                         {
                             continue;
