@@ -4,17 +4,24 @@ namespace Celluros
     public class Field
     {
         private Cell[,] Field_;
-        public Field(uint xSize, uint ySize)
+        public Field(int xSize, int ySize)
         { 
             Field_ = new Cell[xSize, ySize];
         }
 
-        public void SetAtPosition(uint x, uint y, Cell instance)
+        public void SetAtPosition(int x, int y, Cell instance)
         {
-            Field_[x,y] = instance;
+            int newX, newY;
+            newX = x;
+            newY = y;
+            if(x < 0)
+            {
+                newX = Field_.GetLength(0) - 1;
+            }
+            Field_[newX,newY] = instance;
         }
 
-        public bool IsTypeAtPosition(uint x, uint y, Cell type)
+        public bool IsTypeAtPosition(int x, int y, Cell type)
         {
             if(Field_[x,y] == type)
             {
