@@ -43,9 +43,9 @@ namespace Celluros.Conditions
         {
             Random random = new Random();
             byte requiredTypeNeighbors = 0;
-            for (uint x = 0; x < field.GetLength(0); x++)
+            for (int x = 0; x < field.GetLength(0); x++)
             {
-                for (uint y = 0; y < field.GetLength(1); y++)
+                for (int y = 0; y < field.GetLength(1); y++)
                 {
                     if (random.Next(0, 100) < Chance)
                     {
@@ -61,7 +61,7 @@ namespace Celluros.Conditions
                 }
             }
 
-            byte CountNeighbors(uint x, uint y, Cell type)
+            byte CountNeighbors(int x, int y, Cell type)
             {
                 byte count = 0;
 
@@ -75,7 +75,7 @@ namespace Celluros.Conditions
                             continue;
                         }
 
-                        if (field.IsTypeAtPosition(x + (uint)i, y + (uint)j, type))
+                        if (field.IsTypeAtPosition(x + i, y + j, type))
                         {
                             count++;
                         }
