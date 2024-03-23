@@ -10,7 +10,8 @@ namespace Celluros
         {
             get;
             private set;
-        }
+        } = new List<Condition>();
+
         public void Execute(Field field)
         {
             foreach (var condition in Conditions) 
