@@ -5,8 +5,8 @@ namespace Celluros.Conditions
 {
     public class GlobalPositionCondition : Condition
     {
-        private uint XPosition;
-        private uint YPosition;
+        private int XPosition;
+        private int YPosition;
         private float Chance;
         private Cell EndType;
 
