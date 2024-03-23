@@ -4,10 +4,28 @@ namespace Celluros
     public class Field
     {
         private Cell[,] Field_;
+
         public Field(int xSize, int ySize)
         { 
             Field_ = new Cell[xSize, ySize];
         }
+
+        public Cell[,] GetField()
+        {
+            Cell[,] field = new Cell[Field_.GetLength(0), Field_.GetLength(1)];
+
+            for (int x = 0; x < Field_.GetLength(0); x++)
+            {
+                for (int y = 0; y < Field_.GetLength(1); y++)
+                {
+                    field[x,y] = Field_[x, y];
+                }
+
+            }
+
+            return Field_;
+        }
+
 
         public void SetAtPosition(int x, int y, Cell instance)
         {

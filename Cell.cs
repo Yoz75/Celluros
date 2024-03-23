@@ -6,7 +6,15 @@ namespace Celluros
         public int Id 
         {
             get; 
-            set; 
+            private set; 
+        }
+
+        private int LastId;
+
+        public Cell()
+        {
+            Id = LastId;
+            LastId++;
         }
 
         public static bool operator ==(Cell left, Cell right)

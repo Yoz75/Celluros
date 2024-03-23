@@ -11,12 +11,14 @@ namespace Celluros
             private set;
         }
 
-        public void Execute(Field field)
+        public Cell[,] Execute(Field field)
         {
             foreach (var rule in Rules) 
             {
                 rule.Execute(field);
             }
+
+            return field.GetField();
         }
 
     }
