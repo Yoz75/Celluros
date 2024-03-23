@@ -1,13 +1,26 @@
 ﻿
+using System;
+
 namespace Celluros
 {
     public class Field
     {
         private Cell[,] Field_;
 
-        public Field(int xSize, int ySize)
+        public Field(int xSize, int ySize, params Cell[] startTypes)
         { 
             Field_ = new Cell[xSize, ySize];
+
+            Random random = new Random();
+
+            for (int x = 0; x < xSize; x++) 
+            {
+                for(int y = 0; y < ySize; y++)
+                {
+                    Field_[x, y] = startTypes[random.Next(0, startTypes.Length)];
+                }
+            }
+
         }
 
         public Cell[,] GetField()

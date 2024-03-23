@@ -14,7 +14,7 @@ namespace Celluros.Conditions
         private float Chance;
         private byte[] CellsCount = new byte[8];
 
-        public NearCondition(byte[] cellsCount, float chance, Cell startType, Cell requiredType, Cell endType)
+        public NearCondition( float chance, Cell startType, Cell requiredType, Cell endType, params byte[] cellsCount)
         {
             if (cellsCount.Length > 8)
             {
