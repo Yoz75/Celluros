@@ -9,7 +9,7 @@ namespace Celluros
         { 
             get;
             private set;
-        }
+        } = new List<Rule>();
 
         public Cell[,] Execute(Field field)
         {
