@@ -9,7 +9,7 @@ namespace Celluros
             private set; 
         }
 
-        private int LastId;
+        private static int LastId;
 
         public Cell()
         {

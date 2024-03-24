@@ -55,6 +55,16 @@ namespace Celluros
                 newY = Field_.GetLength(1) - 1;
             }
 
+            if(x >= Field_.GetLength(0))
+            {
+                newX = 0;
+            }
+
+            if(y >= Field_.GetLength(1))
+            {
+                newY = 0;
+            }
+
             Field_[newX,newY] = instance;
         }
 
@@ -71,6 +81,16 @@ namespace Celluros
             if(y < 0)
             {
                 newY = Field_.GetLength(1) - 1;
+            }
+
+            if(x >= Field_.GetLength(0))
+            {
+                newX = 0;
+            }
+
+            if(y >= Field_.GetLength(1))
+            {
+                newY = 0;
             }
 
             if(Field_[newX, newY] == type)

@@ -66,9 +66,9 @@ namespace Celluros.Conditions
                 byte count = 0;
 
 
-                for(sbyte i = -1; i < 1; i++)
+                for(sbyte i = -1; i <= 1; i++)
                 {
-                    for (sbyte j = -1; j < 1; j++)
+                    for (sbyte j = -1; j <= 1; j++)
                     {
                         if (i == 0 || j == 0)
                         {
