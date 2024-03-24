@@ -39,33 +39,9 @@ namespace Celluros
             return Field_;
         }
 
-
-        public void SetAtPosition(int x, int y, Cell instance)
+        public void SetField(Cell[,] newField)
         {
-            int newX, newY;
-            newX = x;
-            newY = y;
-            if(x < 0)
-            {
-                newX = Field_.GetLength(0) - 1;
-            }
-
-            if(y < 0) 
-            {
-                newY = Field_.GetLength(1) - 1;
-            }
-
-            if(x >= Field_.GetLength(0))
-            {
-                newX = 0;
-            }
-
-            if(y >= Field_.GetLength(1))
-            {
-                newY = 0;
-            }
-
-            Field_[newX,newY] = instance;
+            Field_ = newField;
         }
 
         public bool IsTypeAtPosition(int x, int y, Cell type)

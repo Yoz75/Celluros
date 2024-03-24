@@ -16,16 +16,22 @@ namespace Celluros.Conditions
         public override void Calculate(Field field)
         {
             Random random = new Random();
+
+            Cell[,] newFrame = field.GetField();
+
             for (int x = 0; x < field.GetLength(0); x++) 
             {
                 for(int y = 0; y < field.GetLength(1); y++) 
                 {
                     if(random.Next(0, 100) < Chance)
                     {
-                        field.SetAtPosition(x, y, EndType); 
+                        newFrame.SetAtPosition(x, y, EndType); 
                     }
                 }
             }
+
+            field.SetField(newFrame);
+
         }
     }
 }

@@ -43,6 +43,9 @@ namespace Celluros.Conditions
         {
             Random random = new Random();
             byte requiredTypeNeighbors = 0;
+
+            Cell[,] newFrame = field.GetField();
+
             for (int x = 0; x < field.GetLength(0); x++)
             {
                 for (int y = 0; y < field.GetLength(1); y++)
@@ -54,7 +57,7 @@ namespace Celluros.Conditions
                             requiredTypeNeighbors = CountNeighbors(x, y, RequiredType);
                             if (CellsCount.Contains(requiredTypeNeighbors))
                             {
-                                field.SetAtPosition(x, y, EndType);
+                                newFrame.SetAtPosition(x, y, EndType);
                             }
                         }
                     }
