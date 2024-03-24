@@ -23,11 +23,6 @@ namespace Celluros
 
         }
 
-        private Field(int xSize, int ySize)
-        {
-            Field_ = new Cell[xSize, ySize];
-        }
-
         public Cell[,] GetField()
         {
             Cell[,] field = new Cell[Field_.GetLength(0), Field_.GetLength(1)];
@@ -44,14 +39,6 @@ namespace Celluros
             return Field_;
         }
 
-        public Field Copy()
-        {
-            Field result = new Field(GetLength(0), GetLength(1));
-
-            result.Field_ = GetField();
-
-            return result;
-        }
 
         public void SetAtPosition(int x, int y, Cell instance)
         {
