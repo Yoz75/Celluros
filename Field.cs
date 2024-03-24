@@ -101,9 +101,9 @@ namespace Celluros
             return false;
         }
 
-        public uint GetLength(int dimension)
+        public int GetLength(int dimension)
         {
-            return (uint)Field_.GetLength(dimension);
+            return Field_.GetLength(dimension);
         }
 
 
