@@ -2,6 +2,6 @@
 {
     public abstract class Condition
     {
-        public abstract void Calculate(Field field);
+        public abstract void Calculate(in Field field);
     }
 }

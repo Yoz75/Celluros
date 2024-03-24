@@ -13,7 +13,7 @@ namespace Celluros.Conditions
             EndType = endType;
         }
 
-        public override void Calculate(Field field)
+        public override void Calculate(in Field field)
         {
             Random random = new Random();
 
