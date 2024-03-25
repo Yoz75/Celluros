@@ -15,6 +15,12 @@ namespace Celluros
             MaxIteration = iterations;
         }
 
+        public bool IsCompleted
+        {
+            get;
+            private set;
+        } = false;
+
         public List<Condition> Conditions
         {
             get;
@@ -26,6 +32,7 @@ namespace Celluros
 
             if(CurrentIteration >= MaxIteration)
             {
+                IsCompleted = true;
                 return;
             }
 

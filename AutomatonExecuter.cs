@@ -1,22 +1,37 @@
 ﻿
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Celluros
 {
     public class AutomatonExecuter
     {
+
+        private int ExecutingRuleId = 0;
+
         public List<Rule> Rules 
         { 
             get;
             private set;
         } = new List<Rule>();
 
-        public Cell[,] Execute(Field field)
+        public Cell[,] Execute(Field field, out bool isCompletedAllRules)
         {
-            foreach (var rule in Rules) 
+            if(ExecutingRuleId >= Rules.Count)
             {
-                rule.Execute(field);
+                isCompletedAllRules = true;
+                return field.GetField();
             }
+            else
+            {
+                isCompletedAllRules = false;
+            }
+            if(Rules[ExecutingRuleId].IsCompleted)
+            {
+                ExecutingRuleId++;
+            }
+
+            Rules[ExecutingRuleId].Execute(field);
 
             return field.GetField();
         }
