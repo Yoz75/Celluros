@@ -9,12 +9,9 @@ namespace Celluros
             private set; 
         }
 
-        private static int LastId;
-
-        public Cell()
+        public Cell(int id)
         {
-            Id = LastId;
-            LastId++;
+            Id = id;
         }
 
         public Cell(Cell other)
