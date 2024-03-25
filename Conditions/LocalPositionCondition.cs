@@ -8,8 +8,6 @@ namespace Celluros.Conditions
 
         private Tuple<sbyte, sbyte> Bias;
         private float Chance;
-        private Cell StartType;
-        private Cell RequiredType;
         private Cell EndType;
 
         public LocalPositionCondition(Tuple<sbyte, sbyte> bias, float chance, Cell startType, Cell requiredType, Cell endType)
@@ -19,8 +17,6 @@ namespace Celluros.Conditions
                 throw new ArgumentException("Bias elements can only be -1, 0 or 1!");
             }
             Chance = chance;
-            StartType = startType;
-            RequiredType = requiredType;
             EndType = endType;
         }
         public override void Calculate(in Field field)
