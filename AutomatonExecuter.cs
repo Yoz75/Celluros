@@ -1,6 +1,5 @@
 ﻿
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace Celluros
 {
@@ -9,8 +8,8 @@ namespace Celluros
 
         private int ExecutingRuleId = 0;
 
-        public List<Rule> Rules 
-        { 
+        public List<Rule> Rules
+        {
             get;
             private set;
         } = new List<Rule>();
@@ -25,10 +24,10 @@ namespace Celluros
             else
             {
                 isCompletedAllRules = false;
-            }
-            if(Rules[ExecutingRuleId].IsCompleted)
-            {
-                ExecutingRuleId++;
+                if(Rules[ExecutingRuleId].IsCompleted)
+                {
+                    ExecutingRuleId++;
+                }
             }
 
             Rules[ExecutingRuleId].Execute(field);
