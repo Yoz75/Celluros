@@ -31,10 +31,8 @@ namespace Celluros.Conditions
                     {
                         if(random.Next(0, 100) < Chance)
                         {
-
-
+                            newFrame.SetAtPosition(x, y, EndType);
                         }
-                        newFrame.SetAtPosition(x, y, EndType);
                     }
                 }
             }
