@@ -36,7 +36,7 @@ namespace Celluros
 
             }
 
-            return Field_;
+            return field;
         }
 
         public void SetField(Cell[,] newField)

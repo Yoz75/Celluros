@@ -63,7 +63,7 @@ namespace Celluros.Conditions
                     }
                 }
             }
-
+            field.SetField(newFrame);
         }
         byte CountNeighbors(int x, int y, Cell type, in Field field)
         {
