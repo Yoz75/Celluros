@@ -17,6 +17,11 @@ namespace Celluros
             LastId++;
         }
 
+        public Cell(Cell other)
+        {
+            Id = other.Id;
+        }
+
         public static bool operator ==(Cell left, Cell right)
         {
             return left.Id == right.Id;
