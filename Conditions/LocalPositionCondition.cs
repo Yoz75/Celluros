@@ -16,6 +16,7 @@ namespace Celluros.Conditions
             {
                 throw new ArgumentException("Bias elements can only be -1, 0 or 1!");
             }
+            Bias = bias;
             Chance = chance;
             EndType = endType;
         }
