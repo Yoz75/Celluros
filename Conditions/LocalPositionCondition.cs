@@ -12,6 +12,10 @@ namespace Celluros.Conditions
 
         public LocalPositionCondition(Tuple<sbyte, sbyte> bias, float chance, Cell startType, Cell requiredType, Cell endType)
         {
+            if(bias.Item1 < -1 || bias.Item1 > 1 || bias.Item2 < -1 || bias.Item2 > 1)
+            {
+                throw new ArgumentException("Bias elements can only be -1, 0 or 1!");
+            }
             Bias = bias;
             Chance = chance;
             EndType = endType;
