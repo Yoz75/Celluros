@@ -49,7 +49,25 @@ namespace Celluros
             int newX, newY;
             newX = x;
             newY = y;
-            ToFieldBorders(x, y, ref newX, ref newY);
+            if(x < 0)
+            {
+                newX = Field_.GetLength(0) - 1;
+            }
+
+            if(y < 0)
+            {
+                newY = Field_.GetLength(1) - 1;
+            }
+
+            if(x >= Field_.GetLength(0))
+            {
+                newX = 0;
+            }
+
+            if(y >= Field_.GetLength(1))
+            {
+                newY = 0;
+            }
 
             if(Field_[newX, newY] == type)
             {
@@ -57,29 +75,6 @@ namespace Celluros
             }
 
             return false;
-        }
-
-        private void ToFieldBorders(int x, int y, ref int newX, ref int newY)
-        {
-            if(x < 0)
-            {
-                newX = Field_.GetLength(0) - x;
-            }
-
-            if(y < 0)
-            {
-                newY = Field_.GetLength(1) - y;
-            }
-
-            if(x >= Field_.GetLength(0))
-            {
-                newX = x - Field_.GetLength(0);
-            }
-
-            if(y >= Field_.GetLength(1))
-            {
-                newY = y - Field_.GetLength(0);
-            }
         }
 
         public int GetLength(int dimension)
