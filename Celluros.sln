@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Celluros", "Celluros.csproj", "{F30AEE5F-EC37-44C7-BA7B-02924ADD1539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellurosTest", "..\CellurosTest\CellurosTest.csproj", "{AC9BDCA3-D1AF-4370-89A4-61AD895E6BD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellurosTest", "..\CellurosTest\CellurosTest.csproj", "{17E63F04-3D4C-4C43-966D-56BD5C366D16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{F30AEE5F-EC37-44C7-BA7B-02924ADD1539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F30AEE5F-EC37-44C7-BA7B-02924ADD1539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F30AEE5F-EC37-44C7-BA7B-02924ADD1539}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC9BDCA3-D1AF-4370-89A4-61AD895E6BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC9BDCA3-D1AF-4370-89A4-61AD895E6BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC9BDCA3-D1AF-4370-89A4-61AD895E6BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC9BDCA3-D1AF-4370-89A4-61AD895E6BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E63F04-3D4C-4C43-966D-56BD5C366D16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E63F04-3D4C-4C43-966D-56BD5C366D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E63F04-3D4C-4C43-966D-56BD5C366D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E63F04-3D4C-4C43-966D-56BD5C366D16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

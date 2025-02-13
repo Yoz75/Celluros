@@ -29,5 +29,9 @@ namespace Celluros
             return !(left == right);
         }
 
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
     }
 }

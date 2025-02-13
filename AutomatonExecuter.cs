@@ -16,7 +16,7 @@ namespace Celluros
 
         public Cell[,] Execute(Field field, out bool isCompletedAllRules)
         {
-            if(ExecutingRuleId >= Rules.Count - 1)
+            if(ExecutingRuleId > Rules.Count - 1)
             {
                 isCompletedAllRules = true;
                 return field.GetField();
