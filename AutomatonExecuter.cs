@@ -28,6 +28,11 @@ namespace Celluros
                 {
                     ExecutingRuleId++;
                 }
+                if(ExecutingRuleId > Rules.Count - 1)
+                {
+                    isCompletedAllRules = true;
+                    return field.GetField();
+                }
             }
 
             Rules[ExecutingRuleId].Execute(field);

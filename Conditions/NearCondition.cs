@@ -50,7 +50,7 @@ namespace Celluros.Conditions
             {
                 for(int y = 0; y < field.GetLength(1); y++)
                 {
-                    if(random.Next(0, 100) < Chance)
+                    if(random.NextDouble() < Chance)
                     {
                         if(field.IsTypeAtPosition(x, y, StartType))
                         {
