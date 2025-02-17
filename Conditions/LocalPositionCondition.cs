@@ -11,7 +11,7 @@ namespace Celluros.Conditions
 
         Random Random = new Random();
 
-        public LocalPositionCondition(Tuple<sbyte, sbyte> bias, float chance, Cell startType, Cell requiredType, Cell endType)
+        public LocalPositionCondition(Tuple<sbyte, sbyte> bias, float chance, Cell endType)
         {
             if(bias.Item1 < -1 || bias.Item1 > 1 || bias.Item2 < -1 || bias.Item2 > 1)
             {
