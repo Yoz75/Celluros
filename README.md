@@ -22,3 +22,10 @@ automaton.Rules.Add(golRule);
 ```
 Every automaton executes by a AutomatonExecuter. Every action in automaton provided by Rule class for example, in GoL we used randomRule (randomly place alive cells) and golRule (game of life logics).<br>
 Every rule consists of Conditions. Conditions are change the type of cell at some point. For example beAlive in GoL is a newar condition. It changes dead  cell to alive with chancw 1, if near this cell 3 alive cells.
+
+### All included conditons (you can create your own!)
+* AlwaysCondition -- changes cell type to endType by some chance (all chances are in range from 0 to 1!)
+* StartTypeAlwaysCondition -- same as AlwaysCondition, but changes cells of a specific type.
+* GlobalPositioCondition -- changes cell at a specific position to a specific type by some chance
+* LocalPositionCondition -- changes cell at some bios by cell position with a specific chance (for example change left up corner cell to some type)
+* NearCondition -- changes cell of startType to endType if there is some cells of requiredType.  
