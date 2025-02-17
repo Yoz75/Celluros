@@ -31,7 +31,7 @@ namespace Celluros
             {
                 for (int y = 0; y < Field_.GetLength(1); y++)
                 {
-                    field[x,y] = new Cell(Field_[x, y]);
+                    field[x,y] = Field_[x, y];
                 }
 
             }
