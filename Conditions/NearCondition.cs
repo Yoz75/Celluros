@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Celluros.Conditions
@@ -12,24 +11,13 @@ namespace Celluros.Conditions
         private Cell RequiredType;
         private Cell EndType;
         private float Chance;
-        private byte[] CellsCount = new byte[8];
+        private byte[] CellsCount;
 
         public NearCondition(float chance, Cell startType, Cell requiredType, Cell endType, params byte[] cellsCount)
         {
             if(cellsCount.Length > 8)
             {
                 throw new ArgumentException("cellsCount must be 8 elements or less!");
-            }
-
-            List<byte> foundElements = new List<byte>();
-
-            foreach(var number in cellsCount)
-            {
-                if(foundElements.Contains(number))
-                {
-                    throw new ArgumentException("cellsCount must contains only unique items!");
-                }
-                foundElements.Add(number);
             }
 
             CellsCount = cellsCount;
