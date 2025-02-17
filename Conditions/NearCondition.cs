@@ -15,10 +15,6 @@ namespace Celluros.Conditions
 
         public NearCondition(float chance, Cell startType, Cell requiredType, Cell endType, params byte[] cellsCount)
         {
-            if(cellsCount.Length > 8)
-            {
-                throw new ArgumentException("cellsCount must be 8 elements or less!");
-            }
 
             CellsCount = cellsCount;
             Chance = chance;
@@ -27,53 +23,37 @@ namespace Celluros.Conditions
             EndType = endType;
         }
 
-        public override void Calculate(in Field field)
+        public override Cell Calculate(CellNeighbors neighbors, out bool isChangedCell, Cell[,] frame)
         {
             Random random = new Random();
             byte requiredTypeNeighbors = 0;
 
-            Cell[,] newFrame = field.GetField();
+            isChangedCell = false;
 
-            for(int x = 0; x < field.GetLength(0); x++)
+            if(random.NextDouble() < Chance)
             {
-                for(int y = 0; y < field.GetLength(1); y++)
+                if(neighbors.Neighbors[neighbors.SelfIndex, neighbors.SelfIndex].Cell == StartType)
                 {
-                    if(random.NextDouble() < Chance)
+                    foreach(var neighbor in neighbors.Neighbors)
                     {
-                        if(field.IsTypeAtPosition(x, y, StartType))
+                        if(neighbor.IsSelf)
                         {
-                            requiredTypeNeighbors = CountNeighbors(x, y, RequiredType, in field);
-                            if(CellsCount.Contains(requiredTypeNeighbors))
-                            {
-                                newFrame.SetAtPosition(x, y, EndType);
-                            }
+                            continue;
+                        }
+                        if(neighbor.Cell == RequiredType)
+                        {
+                            requiredTypeNeighbors++;
                         }
                     }
-                }
-            }
-            field.SetField(newFrame);
-        }
-        byte CountNeighbors(int x, int y, Cell type, in Field field)
-        {
-            byte count = 0;
-
-
-            for(sbyte i = -1; i <= 1; i++)
-            {
-                for(sbyte j = -1; j <= 1; j++)
-                {
-                    if(i == 0 && j == 0)
+                    if(CellsCount.Contains(requiredTypeNeighbors))
                     {
-                        continue;
-                    }
-
-                    if(field.IsTypeAtPosition(x + i, y + j, type))
-                    {
-                        count++;
+                        isChangedCell = true;
+                        return EndType;
                     }
                 }
             }
-            return count;
+
+            return new Cell(-1);
         }
     }
 }

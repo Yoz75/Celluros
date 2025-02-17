@@ -10,6 +10,8 @@ namespace Celluros.Conditions
         private float Chance;
         private Cell EndType;
 
+        Random Random = new Random();
+
         public GlobalPositionCondition(int xPosition, int yPosition, float chance, Cell endType)
         {
             XPosition = xPosition;
@@ -18,20 +20,17 @@ namespace Celluros.Conditions
             EndType = endType;
         }
 
-        public override void Calculate(in Field field)
+        public override Cell Calculate(CellNeighbors neighbors, out bool isChangedCell, Cell[,] frame)
         {
-            Random random = new Random();
+            isChangedCell = false;
 
-            Cell[,] newFrame = field.GetField();
-
-            if (random.Next(0, 100) < Chance)
+            if(Random.Next(0, 100) < Chance)
             {
-                newFrame.SetAtPosition(XPosition, YPosition, EndType);
+                frame.SetAtPosition(XPosition, YPosition, EndType);
             }
 
-            field.SetField(newFrame);
-
+            return new Cell(-1);
+            throw new NotImplementedException();
         }
-
     }
 }

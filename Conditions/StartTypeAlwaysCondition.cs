@@ -17,28 +17,24 @@ namespace Celluros.Conditions
             EndType = endType;
         }
 
-        public override void Calculate(in Field field)
+        public override Cell Calculate(CellNeighbors neighbors, out bool isChangedCell, Cell[,] frame)
         {
             Random random = new Random();
 
-            Cell[,] newFrame = field.GetField();
+            isChangedCell = false;
 
-            for(int x = 0; x < field.GetLength(0); x++)
+            if(neighbors.Neighbors[neighbors.SelfIndex, neighbors.SelfIndex].Cell == StartType)
             {
-                for(int y = 0; y < field.GetLength(1); y++)
+                if(random.Next(0, 100) < Chance)
                 {
-                    if(field.IsTypeAtPosition(x,y, StartType))
-                    {
-                        if(random.Next(0, 100) < Chance)
-                        {
-                            newFrame.SetAtPosition(x, y, EndType);
-                        }
-                    }
+                    isChangedCell = true;
+                    return EndType;
                 }
             }
 
-            field.SetField(newFrame);
-
+            return new Cell(-1);
         }
+
     }
 }
+

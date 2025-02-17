@@ -1,7 +1,8 @@
-﻿namespace Celluros.Conditions
+﻿
+namespace Celluros.Conditions
 {
     public abstract class Condition
     {
-        public abstract void Calculate(in Field field);
+        public abstract Cell Calculate(CellNeighbors neighbors, out bool isChangedCell, Cell[,] frame);
     }
 }

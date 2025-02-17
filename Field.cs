@@ -44,9 +44,29 @@ namespace Celluros
             Field_ = newField;
         }
 
+        public Cell GetTypeAtPosition(int x, int y)
+        {
+            int newX, newY;
+            NormalizeCoordinates(x, y, out newX, out newY);
+
+            return Field_[newX, newY];
+        }
+
         public bool IsTypeAtPosition(int x, int y, Cell type)
         {
             int newX, newY;
+            NormalizeCoordinates(x, y, out newX, out newY);
+
+            if(Field_[newX, newY] == type)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void NormalizeCoordinates(int x, int y, out int newX, out int newY)
+        {
             newX = x;
             newY = y;
             if(x < 0)
@@ -68,20 +88,12 @@ namespace Celluros
             {
                 newY = 0;
             }
-
-            if(Field_[newX, newY] == type)
-            {
-                return true;
-            }
-
-            return false;
         }
 
         public int GetLength(int dimension)
         {
             return Field_.GetLength(dimension);
         }
-
 
     }
 }
