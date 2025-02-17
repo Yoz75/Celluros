@@ -3,14 +3,14 @@ using System;
 
 namespace Celluros.Conditions
 {
-    public class OTAlwaysCondition : Condition
+    public class StartTypeAlwaysCondition : Condition
     {
 
         private Cell StartType;
         private Cell EndType;
         private float Chance;
 
-        public OTAlwaysCondition(float chance, Cell startType, Cell endType)
+        public StartTypeAlwaysCondition(float chance, Cell startType, Cell endType)
         {
             StartType = startType;
             Chance = chance;
