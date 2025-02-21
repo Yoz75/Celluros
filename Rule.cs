@@ -1,13 +1,18 @@
 ﻿
 using Celluros.Conditions;
-using System;
 using System.Collections.Generic;
 
 namespace Celluros
 {
+    /// <summary>
+    /// Rules are calculate conditions for every cell.
+    /// </summary>
     public class Rule
     {
-
+        /// <summary>
+        /// Name of rule (just for GUI, or to distinguish one condition from another)
+        /// </summary>
+        public string? Name;
         private int CurrentIteration = 0;
         private int MaxIteration;
 
