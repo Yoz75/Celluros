@@ -7,10 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Celluros", "Celluros.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellurosTest", "..\CellurosTest\CellurosTest.csproj", "{17E63F04-3D4C-4C43-966D-56BD5C366D16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellurosConsoleInteractor", "..\CellurosConsoleInteractor\CellurosConsoleInteractor.csproj", "{B8664834-7DB3-4240-8E6D-FA328C67450B}"
-	ProjectSection(ProjectDependencies) = postProject
-		{F30AEE5F-EC37-44C7-BA7B-02924ADD1539} = {F30AEE5F-EC37-44C7-BA7B-02924ADD1539}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellurosEditor", "..\CellurosEditor\CellurosEditor.csproj", "{F787E536-4DAE-9A39-E390-1C5D987A9AA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +23,10 @@ Global
 		{17E63F04-3D4C-4C43-966D-56BD5C366D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17E63F04-3D4C-4C43-966D-56BD5C366D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17E63F04-3D4C-4C43-966D-56BD5C366D16}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8664834-7DB3-4240-8E6D-FA328C67450B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8664834-7DB3-4240-8E6D-FA328C67450B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8664834-7DB3-4240-8E6D-FA328C67450B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8664834-7DB3-4240-8E6D-FA328C67450B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F787E536-4DAE-9A39-E390-1C5D987A9AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F787E536-4DAE-9A39-E390-1C5D987A9AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F787E536-4DAE-9A39-E390-1C5D987A9AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F787E536-4DAE-9A39-E390-1C5D987A9AA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

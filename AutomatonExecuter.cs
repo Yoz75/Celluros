@@ -40,5 +40,10 @@ namespace Celluros
             return field.GetField();
         }
 
+        public void Reset()
+        {
+            foreach(var rule in Rules) { rule.Reset(); }
+        }
+
     }
 }

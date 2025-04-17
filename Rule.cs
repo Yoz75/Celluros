@@ -33,6 +33,8 @@ namespace Celluros
             private set;
         } = new List<Condition>();
 
+
+        public void Reset() => CurrentIteration = 0;
         public void Execute(Field field)
         {
             if(CurrentIteration >= MaxIteration)
