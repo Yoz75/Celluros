@@ -34,7 +34,7 @@ namespace Celluros
         } = new List<Condition>();
 
 
-        public void Reset() => CurrentIteration = 0;
+        public void Reset() { CurrentIteration = 0; IsCompleted = false; }
         public void Execute(Field field)
         {
             if(CurrentIteration >= MaxIteration)
