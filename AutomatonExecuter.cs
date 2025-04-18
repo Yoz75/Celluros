@@ -42,7 +42,7 @@ namespace Celluros
 
         public void Reset()
         {
-            foreach(var rule in Rules) { rule.Reset(); }
+            foreach(var rule in Rules) { rule.Reset(); ExecutingRuleId = 0; }
         }
 
     }
