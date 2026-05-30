@@ -20,13 +20,14 @@ namespace Celluros.Conditions
             EndType = endType;
         }
 
-        public override Cell Calculate(CellNeighbors neighbors, out bool isChangedCell, Cell[,] frame)
+        public override Cell Calculate(Field field, int selfX, int selfY, out bool isChangedCell)
         {
             isChangedCell = false;
 
             if(Random.Next(0, 100) < Chance)
             {
-                frame.SetAtPosition(XPosition, YPosition, EndType);
+                // The position is absolute and already known. Its YOUR duty to validate it!
+                field.Field_[XPosition, YPosition] = EndType;
             }
 
             return new Cell(-1);

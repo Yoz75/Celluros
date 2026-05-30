@@ -5,45 +5,41 @@ namespace Celluros
 {
     public class AutomatonExecuter
     {
-
         private int ExecutingRuleId = 0;
 
-        public List<Rule> Rules
+        public List<IRule> Rules
         {
             get;
             private set;
-        } = new List<Rule>();
+        } = [];
 
-        public Cell[,] Execute(Field field, out bool isCompletedAllRules)
+        /// <summary>
+        /// Execute a step of the automaton on a field
+        /// </summary>
+        /// <param name="field"></param>
+        /// <param name="isCompletedAllRules"></param>
+        /// <returns>true if can continue, false if all rules can't be executed</returns>
+        public bool Execute(Field field)
         {
-            if(ExecutingRuleId > Rules.Count - 1)
+            if(ExecutingRuleId >= Rules.Count)
             {
-                isCompletedAllRules = true;
-                return field.GetField();
+                return false;
             }
             else
             {
-                isCompletedAllRules = false;
-                if(Rules[ExecutingRuleId].IsCompleted)
+                if(!Rules[ExecutingRuleId].CanBeExecuted())
                 {
                     ExecutingRuleId++;
                 }
                 if(ExecutingRuleId > Rules.Count - 1)
                 {
-                    isCompletedAllRules = true;
-                    return field.GetField();
+                    return false;
                 }
             }
 
             Rules[ExecutingRuleId].Execute(field);
 
-            return field.GetField();
+            return true;
         }
-
-        public void Reset()
-        {
-            foreach(var rule in Rules) { rule.Reset(); ExecutingRuleId = 0; }
-        }
-
     }
 }

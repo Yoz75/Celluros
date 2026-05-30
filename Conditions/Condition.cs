@@ -14,10 +14,10 @@ namespace Celluros.Conditions
         /// <summary>
         /// Calculate condition 
         /// </summary>
-        /// <param name="neighbors">eight neighbors of cell and the cell itself</param>
+        /// <param name="neighbors">field where condition is calculated</param>
         /// <param name="isChangedCell">is condition changed cell or not?</param>
         /// <param name="frame">whole game field (kostyland govnocode)</param>
         /// <returns>Calculated cell type</returns>
-        public abstract Cell Calculate(CellNeighbors neighbors, out bool isChangedCell, Cell[,] frame);
+        public abstract Cell Calculate(Field field, int selfX, int selfY, out bool isChangedCell);
     }
 }

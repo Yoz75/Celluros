@@ -23,28 +23,28 @@ namespace Celluros.Conditions
             EndType = endType;
         }
 
-        public override Cell Calculate(CellNeighbors neighbors, out bool isChangedCell, Cell[,] frame)
+        public override Cell Calculate(Field field, int selfX, int selfY, out bool isChangedCell)
         {
-            Random random = new Random();
+            var neighbors = field.GetNeighbors(selfX, selfY);
+            // selfX and selfY are ALWAYS valid
+            var self = field.Field_[selfX, selfY];
             byte requiredTypeNeighbors = 0;
 
             isChangedCell = false;
 
-            if(random.NextDouble() < Chance)
+            if(Random.Shared.NextDouble() < Chance)
             {
-                if(neighbors.Neighbors[neighbors.SelfIndex, neighbors.SelfIndex].Cell == StartType)
+                if(self == StartType)
                 {
-                    foreach(var neighbor in neighbors.Neighbors)
-                    {
-                        if(neighbor.IsSelf)
-                        {
-                            continue;
-                        }
-                        if(neighbor.Cell == RequiredType)
-                        {
-                            requiredTypeNeighbors++;
-                        }
-                    }
+                    if(neighbors.Upper == RequiredType) requiredTypeNeighbors++;
+                    if(neighbors.UpperRight == RequiredType) requiredTypeNeighbors++;
+                    if(neighbors.Right == RequiredType) requiredTypeNeighbors++;
+                    if(neighbors.DownRight == RequiredType) requiredTypeNeighbors++;
+                    if(neighbors.Down == RequiredType) requiredTypeNeighbors++;
+                    if(neighbors.DownLeft == RequiredType) requiredTypeNeighbors++;
+                    if(neighbors.Left == RequiredType) requiredTypeNeighbors++;
+                    if(neighbors.UpperLeft== RequiredType) requiredTypeNeighbors++;
+
                     if(CellsCount.Contains(requiredTypeNeighbors))
                     {
                         isChangedCell = true;
@@ -53,7 +53,7 @@ namespace Celluros.Conditions
                 }
             }
 
-            return new Cell(-1);
+            return default;
         }
     }
 }

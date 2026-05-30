@@ -5,10 +5,9 @@ namespace Celluros.Conditions
 {
     public class StartTypeAlwaysCondition : Condition
     {
-
-        private Cell StartType;
-        private Cell EndType;
-        private float Chance;
+        private readonly Cell StartType;
+        private readonly Cell EndType;
+        private readonly float Chance;
 
         public StartTypeAlwaysCondition(float chance, Cell startType, Cell endType)
         {
@@ -17,15 +16,13 @@ namespace Celluros.Conditions
             EndType = endType;
         }
 
-        public override Cell Calculate(CellNeighbors neighbors, out bool isChangedCell, Cell[,] frame)
+        public override Cell Calculate(Field field, int selfX, int selfY, out bool isChangedCell)
         {
-            Random random = new Random();
-
             isChangedCell = false;
 
-            if(neighbors.Neighbors[neighbors.SelfIndex, neighbors.SelfIndex].Cell == StartType)
+            if(field.Field_[selfX, selfY] == StartType)
             {
-                if(random.Next(0, 100) < Chance)
+                if(Random.Shared.Next(0, 100) < Chance)
                 {
                     isChangedCell = true;
                     return EndType;

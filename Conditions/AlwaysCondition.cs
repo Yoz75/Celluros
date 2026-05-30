@@ -13,18 +13,17 @@ namespace Celluros.Conditions
             EndType = endType;
         }
 
-        public override Cell Calculate(CellNeighbors neighbors, out bool isChangedCell, Cell[,] frame)
+        public override Cell Calculate(Field field, int selfX, int selfY, out bool isChangedCell)
         {
-            Random random = new Random();
-
             isChangedCell = false;
 
-            if(random.NextDouble() <= Chance)
+            if(Random.Shared.NextDouble() <= Chance)
             {
                 isChangedCell = true;
                 return EndType;
             }
-            return new Cell(-1);
+
+            return default;
         }
     }
 }
