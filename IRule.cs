@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Celluros;
 
 /// <summary>
-/// Something that executes conditions on a cell of the field (a compilation of conditions)
+/// Something that executes conditions on the field
 /// </summary>
 public interface IRule
 {
