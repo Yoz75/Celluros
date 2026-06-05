@@ -1,3 +1,5 @@
+The new iteration of this repository: https://github.com/Yoz75/CLETKI/
+
 ## This library provides for you a simple solution for cellular automata creating! (Dart original: https://github.com/peaashmeter/ceditor)
 
 ## API:
